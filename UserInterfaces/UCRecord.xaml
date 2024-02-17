@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="ManageBordingFeeses.UserInterfaces.UCRecord"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ManageBordingFeeses.UserInterfaces"
+             mc:Ignorable="d" Background="Transparent" d:DesignWidth="800" Height="689.2">
+    <Grid Margin="50" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel >
+            <!--editor-->
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <Label Content="Editor" FontFamily="Comic Sans MS" Width="100"/>
+                <ComboBox x:Name="CBNameSelect" Width="200" SelectionChanged="CBNameSelect_SelectionChanged" FontFamily="Comic Sans MS">
+                    <ComboBoxItem Content="Akalanka"/>
+                    <ComboBoxItem Content="Bhathiya"/>
+                    <ComboBoxItem Content="Yasas"/>
+                </ComboBox>
+            </StackPanel>
+
+            <!--reason-->
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <Label Content="Reason" Width="100" FontFamily="Comic Sans MS"/>
+                <TextBox x:Name="TBReason" Width="200" Text=""/>
+
+            </StackPanel>
+
+            <!--price-->
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <Label Content="Price" Width="100" FontFamily="Comic Sans MS"/>
+                <TextBox x:Name="TBSpentPrice" Width="200" PreviewTextInput="Price_PreviewTextInput" MaxLength="6" TextChanged="TBSpentPrice_TextChanged" Text="0"/>
+            </StackPanel>
+
+            <!--who include | button panel-->
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <Label Content="Divided into" Width="98" FontFamily="Comic Sans MS"/>
+
+                <Button x:Name="BtnBhathi" Content="Bhathi" Height="50" Width="50" Click="BtnBhathi_Click" Margin="2,0" FontFamily="Comic Sans MS"/>
+                <Button x:Name="BtnAkalanka" Content="Laka" Height="50" Width="50" Click="BtnAkalanka_Click" Margin="2,0" FontFamily="Comic Sans MS"/>
+                <Button x:Name="BtnYasas" Content="Yasas" Height="50" Width="50" Click="BtnYasas_Click" Margin="2,0" FontFamily="Comic Sans MS"/>
+                <Button x:Name="BtnBandA" Content="B &amp; A" Height="50" Width="50" Click="BtnBandA_Click" Margin="2,0" FontFamily="Comic Sans MS"/>
+                <Button x:Name="BtnBandY" Content="Y &amp; B" Height="50" Width="50" Click="BtnBandY_Click" Margin="2,0" FontFamily="Comic Sans MS"/>
+                <Button x:Name="BtnAandY" Content="A &amp; Y" Height="50" Width="50" Click="BtnAandY_Click" Margin="2,0" FontFamily="Comic Sans MS"/>
+
+            </StackPanel>
+            <!--price adding-->
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <Label Content="Individual" Width="100" FontFamily="Comic Sans MS"/>
+                <StackPanel>
+                    <StackPanel Width="300" Orientation="Horizontal" Margin="2" x:Name="PnlAlakanka">
+                        <Label Content="Akalanka" Width="100" FontFamily="Comic Sans MS"/>
+                        <TextBox x:Name="TBAkalanka" Width="200" PreviewTextInput="Price_PreviewTextInput" Text="0"/>
+                    </StackPanel>
+                    <StackPanel Width="300" Orientation="Horizontal" Margin="2" x:Name="PnlBhathiya">
+                        <Label Content="Bhathiya" Width="100" FontFamily="Comic Sans MS"/>
+                        <TextBox x:Name="TBBhathiya" Width="200" PreviewTextInput="Price_PreviewTextInput" Text="0"/>
+                    </StackPanel>
+                    <StackPanel Width="300" Orientation="Horizontal" Margin="2" x:Name="PnlYasas">
+                        <Label Content="Yasas" Width="100" FontFamily="Comic Sans MS"/>
+                        <TextBox x:Name="TBYasas" Width="200" PreviewTextInput="Price_PreviewTextInput" Text="0"/>
+                    </StackPanel>
+
+
+                </StackPanel>
+
+
+            </StackPanel>
+
+            <!--submit-->
+            <Border Background="#022937" Cursor="Hand" Width="200" Margin="20" Height="50" BorderBrush="Gray" BorderThickness="1" CornerRadius="10">
+                <Button x:Name="BtnSubmit" Content="Submit" Click="BtnSubmit_Click" Style="{StaticResource NoMouseOverStyle}" FontFamily="Comic Sans MS" FontSize="20"/>
+            </Border>
+            
+            
+            <!--success massege-->
+            <Border Width="400" Height="150" Margin="0,50" Padding="10" BorderBrush="Black" BorderThickness="1" CornerRadius="5" Visibility="Hidden" x:Name="BdrLastBill">
+                <StackPanel>
+                    <Label Content="Last Bill" FontFamily="Comic Sans MS"/>
+                    <Label Content="" x:Name="LblRTransState" FontFamily="Comic Sans MS" FontSize="20"/>
+                    <Label Content="" x:Name="LblTransDetail" FontFamily="Comic Sans MS"/>
+                    <Label Content="" x:Name="LblTransCost" FontFamily="Comic Sans MS"/>
+
+                </StackPanel>
+                
+            </Border>
+
+        </StackPanel>
+
+    </Grid>
+</UserControl>

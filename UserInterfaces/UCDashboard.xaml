@@ -1,0 +1,127 @@
+﻿<UserControl x:Class="ManageBordingFeeses.UserInterfaces.UCDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ManageBordingFeeses.UserInterfaces"
+             mc:Ignorable="d" Background="Transparent" Loaded="UserControl_Loaded"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!--select month-->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+            <Label Content="Month : " Width="80" FontFamily="Comic Sans MS" FontSize="20"/>
+            <ComboBox x:Name="CBMonth" Width="50" SelectionChanged="CBMonth_SelectionChanged">
+                <ComboBoxItem Content="01"/>
+                <ComboBoxItem Content="02"/>
+                <ComboBoxItem Content="03"/>
+                <ComboBoxItem Content="04"/>
+                <ComboBoxItem Content="05"/>
+                <ComboBoxItem Content="06"/>
+                <ComboBoxItem Content="07"/>
+                <ComboBoxItem Content="08"/>
+                <ComboBoxItem Content="09"/>
+                <ComboBoxItem Content="10"/>
+                <ComboBoxItem Content="11"/>
+                <ComboBoxItem Content="12"/>
+            </ComboBox>
+        </StackPanel>
+        
+        <!--data summery-->
+        <Grid Grid.Row="1" Margin="5">
+            <!--part 1-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".3*"/>
+                <RowDefinition Height=".3*"/>
+                <RowDefinition Height=".3*"/>
+            </Grid.RowDefinitions>
+
+            <!--akalanka-->
+            <Border CornerRadius="10" BorderBrush="Black" BorderThickness="1" Grid.Row="0" Margin="5" Width="300" Background="White">
+                <Grid >
+                    <StackPanel>
+                        <Label Content="Akalanka" FontFamily="Comic Sans MS" />
+                        <StackPanel Orientation="Horizontal" >
+                            <Label Content="Total Cost : " FontFamily="Comic Sans MS"  />
+                            <Label Content="103" x:Name="LblTotal_A"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="From Bhathiya :" FontFamily="Comic Sans MS" />
+                            <Label Content="100" x:Name="LblBhathi_A"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="From Yasas :" FontFamily="Comic Sans MS" />
+                            <Label Content="100" x:Name="LblYasas_A"/>
+                        </StackPanel>
+
+
+                    </StackPanel>
+
+                </Grid>
+            </Border>
+            
+            
+            
+            <!--bhathiya-->
+            <Border CornerRadius="10" BorderBrush="Black" BorderThickness="1" Grid.Row="1" Margin="5" Width="300" Background="White">
+                <Grid>
+                    <StackPanel>
+                        <Label Content="Bhathiya" FontFamily="Comic Sans MS"  />
+                        <StackPanel Orientation="Horizontal" >
+                            <Label Content="Total Cost : " FontFamily="Comic Sans MS" />
+                            <Label Content="103" x:Name="LblTotal_B"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="From Akalanka :" FontFamily="Comic Sans MS" />
+                            <Label Content="100" x:Name="LblAkalanka_B"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="From Yasas :" FontFamily="Comic Sans MS" />
+                            <Label Content="100" x:Name="LblYasas_B"/>
+                        </StackPanel>
+
+
+                    </StackPanel>
+
+                </Grid>
+            </Border>
+
+            <!--yasas-->
+            <Border CornerRadius="10" BorderBrush="Black" BorderThickness="1" Grid.Row="2" Margin="5" Width="300" Background="White">
+                <Grid>
+                    <StackPanel>
+                        <Label Content="Yasas" FontFamily="Comic Sans MS"  />
+                        <StackPanel Orientation="Horizontal" >
+                            <Label Content="Total Cost: " FontFamily="Comic Sans MS"  />
+                            <Label Content="103" x:Name="LblTotal_Y"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="From Bhathiya :" FontFamily="Comic Sans MS" />
+                            <Label Content="100" x:Name="LblBhathi_Y"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="From Akalanka :" FontFamily="Comic Sans MS" />
+                            <Label Content="100" x:Name="LblAkalanka_Y"/>
+                        </StackPanel>
+
+
+                    </StackPanel>
+
+                </Grid>
+            </Border>
+
+
+        </Grid>
+            
+    </Grid>
+</UserControl>
